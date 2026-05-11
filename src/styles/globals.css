@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --accent-color: #2563EB;
+  --bg: #FAFAF9;
+  --bg-alt: #FFFFFF;
+  --fg: #1A1A1A;
+  --fg-muted: #9CA3AF;
+  --border: #E5E7EB;
+  --border-light: #F3F4F6;
+  
+  --font-ibm-plex: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-geist: 'Geist', system-ui, sans-serif;
+  --font-geist-mono: 'Geist Mono', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-ibm-plex);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  line-height: 1.6;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+/* Remove default focus outline */
+:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Minimal scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--fg-muted);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+/* Link baseline */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: opacity 200ms ease-out;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Form baseline */
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Smooth transitions */
+*:not(:where([class*="transition-none"])) {
+  @apply transition-colors duration-200;
+}
+
+@layer components {
+  .container-tight {
+    @apply max-w-6xl mx-auto px-4 md:px-6 lg:px-8;
+  }
+
+  .container-wide {
+    @apply max-w-7xl mx-auto px-4 md:px-6 lg:px-8;
+  }
+
+  .text-muted {
+    @apply text-fg-muted;
+  }
+
+  .divider {
+    @apply h-px bg-border;
+  }
+}

@@ -1,0 +1,10 @@
+.env
+.env.local
+.env*.local
+workspaces/
+.tmp/
+node_modules/
+.next/
+__pycache__/
+*.pyc
+.playwright/
